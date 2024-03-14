@@ -1,59 +1,45 @@
 #include <iostream>
-
 #include <conio.h>
-
 #include <windows.h>
-
 using namespace std;
 
 struct emp
 {
 
     string name, id, address;
-
     int salary, contact;
 };
 
 int total = 0;
-
 emp e[100];
 
 void empdata()
 {
 
     int user = 0;
-
     cout << "How many employees data do you want to enter??" << endl;
-
     cin >> user;
 
     for (int i = total; i < total + user; i++)
     {
-
         cout << "Enter data of employee " << i + 1 << endl
              << endl;
 
         cout << "Enter employee name: ";
-
         cin >> e[i].name;
 
         cout << "Enter id: ";
-
         cin >> e[i].id;
 
         cout << "Enter address: ";
-
         cin >> e[i].address;
 
         cout << "Enter contact: ";
-
         cin >> e[i].contact;
 
         cout << "Enter salary: ";
-
         cin >> e[i].salary;
     }
-
     total = total + user;
 }
 
@@ -82,7 +68,6 @@ void show()
 
     else
     {
-
         cout << "No data is entered" << endl;
     }
 }
@@ -94,9 +79,7 @@ void search()
     {
 
         string id;
-
         cout << "Enter id of employee which you want to search" << endl;
-
         cin >> id;
 
         for (int i = 0; i < total; i++)
@@ -141,9 +124,7 @@ void update()
     {
 
         string id;
-
         cout << "Enter id of employee which you want to update" << endl;
-
         cin >> id;
 
         for (int i = 0; i < total; i++)
@@ -210,20 +191,15 @@ void del()
     {
 
         int press;
-
         cout << "Press 1 to delete specific record" << endl;
-
         cout << "Press 2 to delete full record" << endl;
-
         cin >> press;
 
         if (press == 1)
         {
 
             string id;
-
             cout << "Enter id of employee which you want to delete" << endl;
-
             cin >> id;
 
             for (int i = 0; i < total; i++)
@@ -298,7 +274,6 @@ main()
     cout << "\t\tYour new id is creating please wait";
 
     for (int i = 0; i < 6; i++)
-
     {
 
         cout << ".";
@@ -329,7 +304,6 @@ start:
     cin >> pswd;
 
     if (usrn == username && pswd == password)
-
     {
 
         system("CLS");
@@ -412,7 +386,6 @@ start:
     }
 
     else if (usrn != username)
-
     {
 
         cout << "\t\t\aInvalid username please try again";
@@ -423,7 +396,6 @@ start:
     }
 
     else if (pswd != password)
-
     {
 
         cout << "\t\t\aInvalid password please try again";
