@@ -1,70 +1,53 @@
 #include <iostream>
-
 #include <conio.h>
-
 #include <windows.h>
-
 using namespace std;
 
 struct emp
 {
 
     string name, id, address;
-
     int salary, contact;
 };
 
 int total = 0;
-
 emp e[100];
 
 void empdata()
 {
 
     int user = 0;
-
     cout << "How many employees data do you want to enter??" << endl;
-
     cin >> user;
 
-    for (int i = total; i < total + user; i++)
-    {
-
+    for (int i = total; i < total + user; i++){
         cout << "Enter data of employee " << i + 1 << endl
              << endl;
 
         cout << "Enter employee name: ";
-
         cin >> e[i].name;
 
         cout << "Enter id: ";
-
         cin >> e[i].id;
 
         cout << "Enter address: ";
-
         cin >> e[i].address;
 
         cout << "Enter contact: ";
-
         cin >> e[i].contact;
 
         cout << "Enter salary: ";
-
         cin >> e[i].salary;
     }
-
-    total = total + user;
+     total = total + user;
 }
 
 void show()
 {
 
-    if (total != 0)
-    {
+    if (total != 0){
 
-        for (int i = 0; i < total; i++)
-        {
+        for (int i = 0; i < total; i++){
 
             cout << "Data of employee " << i + 1 << endl;
 
@@ -80,9 +63,7 @@ void show()
         }
     }
 
-    else
-    {
-
+    else{
         cout << "No data is entered" << endl;
     }
 }
@@ -90,20 +71,15 @@ void show()
 void search()
 {
 
-    if (total != 0)
-    {
+    if (total != 0){
 
         string id;
-
         cout << "Enter id of employee which you want to search" << endl;
-
         cin >> id;
 
-        for (int i = 0; i < total; i++)
-        {
+        for (int i = 0; i < total; i++){
 
-            if (e[i].id == id)
-            {
+            if (e[i].id == id){
 
                 cout << "Data of employee " << i + 1 << endl;
 
@@ -120,15 +96,13 @@ void search()
                 break;
             }
 
-            if (i == total - 1)
-            {
+            if (i == total - 1){
 
                 cout << "No such record found" << endl;
             }
         }
     }
-    else
-    {
+    else{
 
         cout << "No data is entered" << endl;
     }
@@ -137,20 +111,15 @@ void search()
 void update()
 {
 
-    if (total != 0)
-    {
+    if (total != 0){
 
         string id;
-
         cout << "Enter id of employee which you want to update" << endl;
-
         cin >> id;
 
-        for (int i = 0; i < total; i++)
-        {
+        for (int i = 0; i < total; i++){
 
-            if (e[i].id == id)
-            {
+            if (e[i].id == id){
 
                 cout << "Old data of employee " << i + 1 << endl;
 
@@ -189,15 +158,13 @@ void update()
                 break;
             }
 
-            if (i == total - 1)
-            {
+            if (i == total - 1){
 
                 cout << "No such record found" << endl;
             }
         }
     }
-    else
-    {
+    else{
 
         cout << "No data is entered" << endl;
     }
@@ -206,31 +173,22 @@ void update()
 void del()
 {
 
-    if (total != 0)
-    {
+    if (total != 0){
 
         int press;
-
         cout << "Press 1 to delete specific record" << endl;
-
         cout << "Press 2 to delete full record" << endl;
-
         cin >> press;
 
-        if (press == 1)
-        {
+        if (press == 1){
 
             string id;
-
             cout << "Enter id of employee which you want to delete" << endl;
-
             cin >> id;
 
-            for (int i = 0; i < total; i++)
-            {
+            for (int i = 0; i < total; i++){
 
-                if (e[i].id == id)
-                {
+                if (e[i].id == id){
 
                     e[i].name = e[i + 1].name;
 
@@ -249,30 +207,26 @@ void del()
                     break;
                 }
 
-                if (i == total - 1)
-                {
+                if (i == total - 1){
 
                     cout << "No such record found" << endl;
                 }
             }
         }
 
-        else if (press == 2)
-        {
+        else if (press == 2){
 
             total = 0;
 
             cout << "All record is deleted" << endl;
         }
 
-        else
-        {
+        else{
 
             cout << "Invalid Input" << endl;
         }
     }
-    else
-    {
+    else{
 
         cout << "No data is entered" << endl;
     }
@@ -297,9 +251,7 @@ main()
 
     cout << "\t\tYour new id is creating please wait";
 
-    for (int i = 0; i < 6; i++)
-
-    {
+    for (int i = 0; i < 6; i++){
 
         cout << ".";
 
@@ -328,16 +280,13 @@ start:
 
     cin >> pswd;
 
-    if (usrn == username && pswd == password)
-
-    {
+    if (usrn == username && pswd == password){
 
         system("CLS");
 
         char ch;
 
-        while (1)
-        {
+        while (1){
 
             cout << "\n\nPress 1 to enter data" << endl;
 
@@ -357,8 +306,7 @@ start:
 
             system("CLS");
 
-            switch (ch)
-            {
+            switch (ch){
 
             case '1':
 
@@ -411,9 +359,7 @@ start:
         }
     }
 
-    else if (usrn != username)
-
-    {
+    else if (usrn != username){
 
         cout << "\t\t\aInvalid username please try again";
 
@@ -422,9 +368,7 @@ start:
         goto start;
     }
 
-    else if (pswd != password)
-
-    {
+    else if (pswd != password){
 
         cout << "\t\t\aInvalid password please try again";
 
@@ -433,8 +377,7 @@ start:
         goto start;
     }
 
-    else
-    {
+    else{
 
         cout << "\t\t\aInvalid username and password";
 
